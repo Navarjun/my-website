@@ -6,7 +6,8 @@ block content
             .project-container(style='background: rgb('+val.rgb.join(',')+')')
                 .project-card
                     .image-container
-                        img(src= val.imageFile)
+                        a(href= '/blog/'+val.slug)
+                            img(src= val.imageFile)
                     .description-container
                         a(href= '/blog/'+val.slug, style='background: rgba('+val.rgb.join(',')+', 0.7)')
                             h1= val.title
