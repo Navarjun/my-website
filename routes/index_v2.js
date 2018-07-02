@@ -15,6 +15,11 @@ router.get("/", function (req, res) {
     res.render('v2/index', { title: 'navarjun', navbar: 'home' });
 });
 
+router.get("/robots.txt", function (req, res) {
+    res.setHeader('Content-type', 'text/plain');
+    res.status(200).send();
+});
+
 router.get("/rss", function (req, res) {
     res.set('Content-Type', 'text/xml');
     res.status(200).send(RSS_FEED.rss());

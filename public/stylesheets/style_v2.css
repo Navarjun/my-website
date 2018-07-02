@@ -19,12 +19,20 @@ body, html {
 nav {
   border-bottom: 1px solid #ccc;
   padding-bottom: 0px; }
-  nav a {
-    color: #212529; }
-    nav a.active {
+  nav a.navbar-brand {
+    border-bottom: 2px solid transparent; }
+    nav a.navbar-brand.active {
       font-weight: 400;
       border-bottom: 2px solid #f99; }
-    nav a:hover {
+    nav a.navbar-brand:hover {
+      border-bottom: 2px solid #f99; }
+  nav ul.navbar-nav a {
+    color: #212529;
+    border-bottom: 2px solid transparent; }
+    nav ul.navbar-nav a.active {
+      font-weight: 400;
+      border-bottom: 2px solid #f99; }
+    nav ul.navbar-nav a:hover {
       border-bottom: 2px solid #f99; }
 
 #website-container {

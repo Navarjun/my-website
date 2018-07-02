@@ -40,14 +40,27 @@ h1, h2 {
 nav {
     border-bottom: 1px solid $light-color;
     padding-bottom: 0px;
-    a {
-        color: $dark-color;
+    a.navbar-brand {
+        border-bottom: 2px solid transparent;
         &.active {
             font-weight: 400;
             border-bottom: 2px solid $theme-color;
         }
         &:hover {
             border-bottom: 2px solid $theme-color;
+        }
+    }
+    ul.navbar-nav {
+        a {
+            color: $dark-color;
+            border-bottom: 2px solid transparent;
+            &.active {
+                font-weight: 400;
+                border-bottom: 2px solid $theme-color;
+            }
+            &:hover {
+                border-bottom: 2px solid $theme-color;
+            }
         }
     }
 }
