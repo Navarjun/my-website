@@ -324,26 +324,14 @@ div.paging {
 }
 
 #photography-container, #calligraphy-container {
-    line-height: 0;
-    column-count: 1;
-    column-gap: 0px;
-    @media screen and (min-width: $break-xs) {
-        column-count: 2;
+    div {
+        margin-bottom: 50px;
+        text-align: center;
     }
-    @media screen and (min-width: $break-sm) {
-        column-count: 3;
-    }
-    @media screen and (min-width: $break-md) {
-        column-count: 4;
-    }
-    @media screen and (min-width: $break-lg) {
-        column-count: 5;
-    }
-    
     img {
         /* Just in case there are inline attributes */
-        width: 100% !important;
-        height: auto !important;
+        max-width: 80vh !important;
+        max-height: 80vh !important;
         margin: 1px;
     }
 }
