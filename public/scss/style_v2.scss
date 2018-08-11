@@ -8,8 +8,8 @@ $break-lg: 1200px;
 
 $dark-color: rgb(33, 37, 41);
 $light-color: #ccc;
-$theme-color-transparent: rgba(33, 37, 41, 0.1);
-$theme-color: rgb(33, 37, 41);
+$theme-color-transparent: rgba(0, 129, 112, 0.3);
+$theme-color: rgb(0, 129, 112);
 
 .font-title {
     font-family: $font-title;
@@ -227,10 +227,10 @@ nav {
     .blog-post-container {
         padding-top: 25px;
         padding-bottom: 25px;
-        border-bottom: 1px solid $light-color;
+        border-bottom: 1px solid $theme-color;
         transition: 0.3s all;
         &:hover {
-            box-shadow: 0px 0px 15px $light-color;
+            box-shadow: 0px 0px 15px $theme-color-transparent;
         }
     }
     p.publish-date {
@@ -347,6 +347,9 @@ div.paging {
 // BOOTSTRAP OVERRIDE
 .bg-light {
     background: white !important;
+}
+.badge-dark {
+    background-color: $light-color;
 }
 
 // ANIMATION EFFECTS
