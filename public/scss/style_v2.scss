@@ -1,5 +1,5 @@
 $font-title: 'Alegreya';
-$font-body: 'Fira Sans';
+$font-body: 'Libre Franklin', sans-serif;
 
 $break-xs: 576px;
 $break-sm: 768px;
@@ -8,7 +8,8 @@ $break-lg: 1200px;
 
 $dark-color: rgb(33, 37, 41);
 $light-color: #ccc;
-$theme-color: #f99;
+$theme-color-transparent: rgba(33, 37, 41, 0.1);
+$theme-color: rgb(33, 37, 41);
 
 .font-title {
     font-family: $font-title;
@@ -17,11 +18,20 @@ $theme-color: #f99;
 
 a.link {
     color: $dark-color;
-    border-bottom: 1px solid $theme-color;
+    border-bottom: 2px solid $theme-color;
+    transition: 0.1s all;
+    text-decoration: none;
+    background-size: 120% 200%;
+    background-image: linear-gradient(to bottom, transparent 50%, $theme-color 50%);
+    transition: background-position color 0.2s;
     &:hover {
-        text-decoration: none;
-        border-bottom: 3px solid $theme-color;
+        background-position: 0 100%;
+        color: white;
     }
+}
+
+.bold {
+    font-weight: 700;
 }
 
 body, html {
@@ -29,37 +39,39 @@ body, html {
     padding: 0px;
     min-height: 100vh;
     font-family: $font-body, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 h1, h2 {
     @extend .font-title;
     // font-family: $font-title, 'serif' !important;
+    @media screen and (max-width: $break-sm) {
+        font-size: 1.7em;
+    }
 }
 
 nav {
     border-bottom: 1px solid $light-color;
     padding-bottom: 0px;
-    a.navbar-brand {
-        border-bottom: 2px solid transparent;
-        &.active {
-            font-weight: 400;
-            border-bottom: 2px solid $theme-color;
-        }
-        &:hover {
-            border-bottom: 2px solid $theme-color;
-        }
-    }
-    ul.navbar-nav {
+    ul.navbar-nav, a.navbar-brand {
         a {
-            color: $dark-color;
-            border-bottom: 2px solid transparent;
+            padding: 5px;
+            transition: 0.1s all;
             &.active {
-                font-weight: 400;
-                border-bottom: 2px solid $theme-color;
+                @extend .bold;
+                @media screen and (min-width: $break-md){
+                    -webkit-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
             }
             &:hover {
-                border-bottom: 2px solid $theme-color;
+                background: none;
+                @media screen and (min-width: $break-md){
+                    -webkit-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
             }
         }
     }
@@ -114,14 +126,6 @@ nav {
             }
             p.social {
                 margin-bottom: 0px;
-                a {
-                    color: $dark-color;
-                    border-bottom: 1px solid $theme-color;
-                    &:hover {
-                        text-decoration: none;
-                        border-bottom: 3px solid $theme-color;
-                    }
-                }
             }
         }
     }
@@ -290,7 +294,7 @@ nav {
         @extend a.link;
     }
     strong {
-        font-weight: 500;
+        @extend .bold;
     }
 }
 
@@ -333,5 +337,29 @@ div.paging {
         max-width: 80vh !important;
         max-height: 80vh !important;
         margin: 1px;
+        @media screen and (max-width: $break-sm) {
+            max-width: 100% !important;
+            max-height: 100% !important;
+        }
     }
+}
+
+// BOOTSTRAP OVERRIDE
+.bg-light {
+    background: white !important;
+}
+
+// ANIMATION EFFECTS
+
+.hvr-sweep-to-top {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
