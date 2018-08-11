@@ -53,6 +53,7 @@ h1, h2 {
 nav {
     border-bottom: 1px solid $light-color;
     padding-bottom: 0px;
+    border-color: $theme-color-transparent;
     ul.navbar-nav, a.navbar-brand {
         a {
             padding: 5px;
@@ -72,6 +73,11 @@ nav {
                     -ms-transform: scale(1.1);
                     transform: scale(1.1);
                 }
+            }
+
+            &.resume {
+                background: $light-color;
+                border-radius: 20px;
             }
         }
     }
@@ -350,6 +356,9 @@ div.paging {
 }
 .badge-dark {
     background-color: $light-color;
+}
+.navbar-light .navbar-nav .nav-link.active {
+    color: $theme-color;
 }
 
 // ANIMATION EFFECTS

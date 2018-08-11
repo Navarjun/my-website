@@ -30,7 +30,8 @@ body, html {
 
 nav {
   border-bottom: 1px solid #ccc;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  border-color: rgba(0, 129, 112, 0.3); }
   nav ul.navbar-nav a, nav a.navbar-brand a {
     padding: 5px;
     transition: 0.1s all; }
@@ -46,6 +47,9 @@ nav {
           -webkit-transform: scale(1.1);
           -ms-transform: scale(1.1);
           transform: scale(1.1); } }
+    nav ul.navbar-nav a.resume, nav a.navbar-brand a.resume {
+      background: #ccc;
+      border-radius: 20px; }
 
 #website-container {
   padding-top: 49px; }
@@ -262,6 +266,9 @@ div.paging {
 
 .badge-dark {
   background-color: #ccc; }
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #008170; }
 
 .hvr-sweep-to-top {
   display: inline-block;
