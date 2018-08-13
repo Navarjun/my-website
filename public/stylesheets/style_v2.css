@@ -35,6 +35,9 @@ nav {
   nav ul.navbar-nav a, nav a.navbar-brand a {
     padding: 5px;
     transition: 0.1s all; }
+    @media screen and (max-width: 992px) {
+      nav ul.navbar-nav a, nav a.navbar-brand a {
+        text-align: center; } }
     @media screen and (min-width: 992px) {
       nav ul.navbar-nav a.active, nav a.navbar-brand a.active {
         -webkit-transform: scale(1.1);
