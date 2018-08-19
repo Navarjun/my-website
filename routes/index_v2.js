@@ -261,4 +261,8 @@ router.put('/add/:type', function (req, res, next) {
     }
 });
 
+router.get('/test_req', function (req, res) {
+    res.status(200).send();
+});
+
 module.exports = router;
